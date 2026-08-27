@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Cafeteria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Cafeteria FELLAS</h1>
+    <hr>
+
+    <p>Buscar Cliente:</p>
+    <input type="text" id="nomeCliente" placeholder="Digite o nome completo...">
+    <button onclick="buscarDados()">Buscar Cliente</button>
+    <hr>
+
+    <h2>Dados do Cliente</h2>
+    <p>Nome: <span id="lblNome"></span></p>
+    <p>E-mail: <span id="lblEmail"></span></p>
+    <p>Status da Conta: [ <span id="lblStatus"></span> ]</p>
+    <hr>
+
+    <h2>Histórico dos pedidos</h2>
+    <table border="1" id="tabelaPedidos" style="width: 100%; text-align: left;">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Data do Pedido</th>
+                <th>Previsão</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="corpoTabela">
+            <tr>
+                <td colspan="4">Aguardando busca...</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html> 
