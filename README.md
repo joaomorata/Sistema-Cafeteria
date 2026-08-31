@@ -1,3 +1,119 @@
-Sistema Cafeteria ☕🍰Um sistema web completo desenvolvido em .NET (Web API) e Frontend estático (HTML/CSS/JS) para o gerenciamento de atendimentos, catálogo e clientes de uma cafeteria. O projeto permite gerenciar categorias, produtos, clientes e pedidos através de APIs RESTful integradas a uma interface web.  🚀 FuncionalidadesMódulo de Categorias & Produtos:  Categorias: Cadastro e gestão das categorias de itens do menu (CategoriaController).  Produtos: Cadastro, edição e consulta de itens comercializados (ProdutoController) vinculados às suas respectivas categorias.  Módulo de Clientes & Pedidos:  Clientes: Controle cadastral dos clientes da cafeteria (ClienteController).  Pedidos: Registro, controle de itens e histórico das compras realizadas (PedidoController).  Interface Web (Frontend):  Painel estático em HTML5 (index.html), estilizado via CSS3 (style.css) e com integração assíncrona (script.js) para consumir os endpoints da API C#.  🛠️ Tecnologias UtilizadasBackend: C#, ASP.NET Core Web API  ORM: Entity Framework Core (CafeteriaDbContext)  Frontend: HTML5, CSS3, JavaScript (Fetch API)  Documentação & Testes: Arquivo HTTP (CafeteriaDB.http) e Swagger  🗄️ Arquitetura do SistemaO projeto adota uma divisão simples entre Backend (Web API) e Frontend estático:  ComponenteCaminho / ArquivoDescriçãoDbContextCafeteriaDB/Models/CafeteriaDbContext.csGerencia o mapeamento e a conexão com o banco de dados.  EntidadesCafeteriaDB/Models/Modelos de dados: Categoria, Cliente, Pedido e Produto.  ControllersCafeteriaDB/Controllers/Endpoints RESTful para manipular os dados da aplicação.  FrontendFrontEnd/Contém index.html, style.css e script.js para interação com o usuário.  ⚙️ Pré-requisitosAntes de iniciar, garanta que você possui os seguintes softwares instalados:SDK do .NET Core (versão suportada pelo C# no projeto)  Visual Studio 2022 (com a carga de trabalho Desenvolvimento Web e ASP.NET) ou Visual Studio Code  SQL Server ou LocalDB  🏃‍♂️ Como Executar o Projeto1. Clonar o repositório:Bashgit clone https://github.com/seu-usuario/Sistema-Cafeteria.git
+# Sistema Cafeteria ☕🍰
+
+
+
+> **Um sistema web simples, moderno e eficiente para a gestão completa de cafeterias.**
+> Desenvolvido em **.NET (Web API)** no backend e **HTML5/CSS3/JS** no frontend, o projeto permite organizar categorias, produtos, clientes e pedidos de forma integrada e relacional.
+> 
+> 
+
+---
+
+### 🚀 Funcionalidades
+
+**☕ Gestão de Cardápio & Estoque**
+
+* **Categorias:** Cadastro e organização de categorias de produtos (`CategoriaController`).
+
+
+* **Produtos:** Controle do catálogo com fotos, preços e categorias associadas (`ProdutoController`).
+
+
+
+**👥 Gestão de Vendas & Atendimento**
+
+* **Clientes:** Base cadastral de clientes para histórico de consumo (`ClienteController`).
+
+
+* **Pedidos:** Emissão e gerenciamento das compras realizadas na cafeteria (`PedidoController`).
+
+
+
+**💻 Painel Interativo**
+
+* Interface web leve e responsiva (`index.html` + `style.css`) consumindo a API C# via requisições assíncronas em JavaScript (`script.js`).
+
+
+
+---
+
+### 🛠️ Tecnologias Utilizadas
+
+| Camada | Tecnologia |
+| --- | --- |
+| **Backend** | C# (.NET Web API)
+
+ |
+| **ORM** | Entity Framework Core (`CafeteriaDbContext`)
+
+ |
+| **Frontend** | HTML5, CSS3, JavaScript puro (Fetch API)
+
+ |
+| **Testes API** | Swagger & Arquivo `CafeteriaDB.http`<br> |
+
+---
+
+### 🗄️ Estrutura do Projeto
+
+```text
+Sistema-Cafeteria/
+├── CafeteriaDB/              # Backend (API RESTful)
+│   ├── Controllers/          # Endpoints (Categoria, Cliente, Pedido, Produto)
+│   ├── Models/               # Mapeamento do Banco de Dados e Entidades
+│   └── Program.cs            # Configurações do servidor e serviços
+└── FrontEnd/                 # Interface do Usuário
+    ├── index.html            # Estrutura visual da aplicação
+    ├── style.css             # Estilização e layout
+    └── script.js             # Consumo da API e regras de tela
+
+```
+
+---
+
+### ⚙️ Pré-requisitos
+
+Antes de rodar a aplicação, certifique-se de ter os seguintes itens configurados:
+
+* **SDK do .NET Core**
+
+* **Visual Studio 2022** (com suporte a *Desenvolvimento Web e ASP.NET*) ou **VS Code**
+
+* **SQL Server** ou **LocalDB**
+
+
+---
+
+### 🏃‍♂️ Como Executar
+
+1. **Clone o repositório:**
+```bash
+git clone https://github.com/joaomorata/Sistema-Cafeteria.git
 cd Sistema-Cafeteria
-2. Configurar a String de Conexão:Abra o arquivo CafeteriaDB/appsettings.json (ou appsettings.Development.json) e ajuste a sua ConnectionString para apontar para o seu servidor SQL Server local.  3. Executar o Backend (API):
+
+```
+
+
+2. **Configure a conexão com o Banco de Dados:**
+> Abra o arquivo `CafeteriaDB/appsettings.json` e ajuste a chave `ConnectionStrings` apontando para o seu SQL Server.
+> 
+> 
+
+
+3. **Inicie a API (Backend):**
+```bash
+cd CafeteriaDB
+dotnet restore
+dotnet run
+
+```
+
+
+*A API abrirá na porta local configurada no `launchSettings.json` (ex: `https://localhost:7xxxx`)*.
+
+
+4. **Abra o Frontend:**
+* Abra o arquivo `FrontEnd/index.html` em qualquer navegador (ou utilize a extensão *Live Server* no VS Code).
+
+
+* Garanta que o endpoint base no arquivo `script.js` corresponda à porta onde a API está em execução.
